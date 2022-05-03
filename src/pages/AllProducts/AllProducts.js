@@ -3,7 +3,7 @@ import useProducts from '../../hook/useProducts';
 import Product from '../Home/Product/Product';
 
 const AllProducts = () => {
-    const [products] = useProducts([])
+    const [products] = useProducts('allProducts')
     return (
         <div>
             <div className='row gap-3 d-flex justify-content-center'>
