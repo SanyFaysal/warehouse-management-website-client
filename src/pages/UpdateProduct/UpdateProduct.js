@@ -76,7 +76,7 @@ const UpdateProduct = () => {
 
                 </div>
             </div>
-            <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/allProducts'>Manage All Products</Link>
+            <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
         </>
     )
 };

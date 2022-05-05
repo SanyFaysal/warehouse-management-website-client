@@ -1,11 +1,12 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import image1 from '../../../images/pngtree-business-concept-of-online-shopping-e-commerce-png-image_2174632 (1).jpg'
 const Banner = () => {
     return (
         <div>
             <Carousel variant="dark" fade>
-                <Carousel.Item>
+                <Carousel.Item as={Link} to="/home">
                     <img
                         style={{ width: '100%', height: '50vh' }}
                         src={image1}

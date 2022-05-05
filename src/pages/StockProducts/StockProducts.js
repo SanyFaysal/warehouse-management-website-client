@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useProducts from '../../../hook/useProducts';
-import Product from '../Product/Product';
+import useProducts from '../../hook/useProducts';
+import Product from '../Home/Product/Product';
 
-const Products = () => {
+const StockProducts = () => {
     const [products] = useProducts()
-    const demoProduct = [...products.slice(0, 6)]
     return (
         <div className=''>
-            <h1 className='text-center mt-4'>Products :  { }</h1>
+            <h2 className='text-center mt-4'>Total Stock Products :  {products.length}</h2>
             <div className='w-100 row gap-3 d-flex justify-content-center'>
                 {
-                    demoProduct.map(product => <Product
+                    products.map(product => <Product
                         key={product._id}
                         product={product}></Product>)
                 }
@@ -21,4 +20,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default StockProducts;
