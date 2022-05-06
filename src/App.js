@@ -9,6 +9,8 @@ import Footer from './shared/Footer/Footer';
 import Header from './shared/Header/Header';
 import StockProducts from './pages/StockProducts/StockProducts';
 import AddProduct from './pages/AddProduct/AddProduct';
+import RequireAuth from './shared/RequireAuth/RequireAuth';
+import MyProducts from './pages/MyProducts/MyProducts';
 
 function App() {
   return (
@@ -18,11 +20,24 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/stockProducts' element={<StockProducts></StockProducts>}></Route>
-        <Route path='/manageProducts' element={<ManageProducts></ManageProducts>}></Route>
+        <Route path='/products/:id' element={<UpdateProduct></UpdateProduct>}></Route>
+        <Route path='/manageProducts' element={
+          <RequireAuth>
+            <ManageProducts></ManageProducts>
+          </RequireAuth>
+        }></Route>
+        <Route path='/addProduct' element={
+          <RequireAuth>
+            <AddProduct></AddProduct>
+          </RequireAuth>
+        }></Route>
+        <Route path='/myProducts' element={
+          <RequireAuth>
+            <MyProducts></MyProducts>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
-        <Route path='/products/:id' element={<UpdateProduct></UpdateProduct>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
