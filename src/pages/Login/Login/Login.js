@@ -1,11 +1,28 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import Loading from '../../../shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate()
+    const [
+        signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    const onSubmit = (data) => {
+        const email = data.email;
+        const password = data.password;
+        signInWithEmailAndPassword(email, password)
+        data.reset()
+    };
+    if (user) {
+        navigate('/home')
+    }
+    if (loading) {
+        <Loading></Loading>
+    }
     return (
         <div className='row  my-5'>
             <div className=" shadow p-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto  bg-secondary bg-opacity-10">
