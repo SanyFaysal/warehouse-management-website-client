@@ -14,14 +14,14 @@ const Products = () => {
         <div className=''>
 
             <h1 className='text-center mt-4'>Products :  { }</h1>
-            <div className='w-100 row gap-3 d-flex justify-content-center'>
+            <div className='w-100 row gap-2 d-flex justify-content-center'>
                 {
                     demoProduct.map(product => <Product
                         key={product._id}
                         product={product}></Product>)
                 }
             </div>
-            <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
+            <Link className='btn bg-success bg-opacity-75 text-white mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
         </div>
     );
 };

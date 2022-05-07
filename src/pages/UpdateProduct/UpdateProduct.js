@@ -57,18 +57,18 @@ const UpdateProduct = () => {
     return (
         <div className='container  m-5 mx-auto '>
             <h2 className='text-center' >Update Product</h2>
-            <div className='row d-flex justify-content-around bg-secondary bg-opacity-10 py-4 rounded'>
+            <div className='row d-flex justify-content-between bg-secondary bg-opacity-10 py-4 rounded border'>
                 <div className='col-xl-5 col-lg-5 col-md-6 col-sm-12 col-sm-12 d-flex justify-content-center align-items-center'>
                     <img src={product?.img} style={{ width: '300px' }} alt='' />
                 </div>
                 <div className='col-xl-7 col-lg-7 col-md-6 col-sm-12 col-sm-12 d-flex mb-5 justify-content-center align-items-center'>
                     <div>
                         <h4>{name}</h4>
-                        <p className='fs-5'>{description}</p>
+                        <p className='fs-6 border-top border-bottom py-2'>{description}</p>
                         <h5>Supplier :{supplier} </h5>
                         <h5 className='fw-bold'>Price : {price}BDT </h5>
                         <h5 className='fw-bold'>In stock : <span className='text-muted bg-white rounded px-1'> {quantity} pics</span> </h5>
-                        <div className='d-flex align-items-center '>
+                        <div className='d-flex align-items-center pt-3 '>
                             <div className='me-4'>
                                 <button onClick={handleDelivered} className='btn btn-danger shadow'>Delivered</button>
                             </div>

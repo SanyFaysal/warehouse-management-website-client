@@ -8,7 +8,7 @@ const MyProduct = ({ product, handleDelete }) => {
     const { name, quantity, price, description, supplier, _id, img } = product;
 
     return (
-        <div className='d-flex row py-3 px-2 justify-content-between border rounded-3 bg-secondary bg-opacity-10 shadow-sm'>
+        <div className='d-flex row py-3 my-3 px-2 justify-content-between border rounded-3 bg-secondary bg-opacity-10 shadow-sm'>
             <div className='my-auto mx-auto d-flex justify-content-center col-xl-3 col-lg-3 col-md-12 col-sm-12 '>
                 <img src={img} style={{ width: '300px' }} alt="" />
             </div>

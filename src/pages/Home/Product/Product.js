@@ -8,22 +8,22 @@ const Product = ({ product }) => {
         navigate(`/products/${id}`)
     }
     return (
-        <div className='col-xl-3 col-lg-3 text-center border rounded '>
-            <div className='px-4 pt-4 '>
+        <div className='col-xl-3 col-lg-3 text- border rounded '>
+            <div className='p-2 '>
                 <div className='d-flex justify-content-center' >
-                    <img src={img} className='' alt="" />
+                    <img src={img} style={{ width: '200px' }} className='' alt="" />
                 </div>
                 <div>
                     <h6>{name}</h6>
                     <p title={description}>{description.slice(0, 40)}..</p>
-                    <div className='d-flex'>
-                        <h5>stock:{quantity} </h5>
-                        <p className='fw-bold mx-2'>Supplier :{supplier} </p>
-                    </div>
-                    <h6 className='my-0'>Price:{price}BDT </h6>
+                    <h6 >Supplier : <span className='fw-bold '>{supplier} </span> </h6>
+                    <h6>In stock : <span className='text-danger fw-bold'>{quantity} pics</span></h6>
+                    <h6 className='my-0'>Price : <span className='fw-bold'>{price} BDT</span> </h6>
                 </div>
             </div >
-            <button className='btn btn-secondary w-100 d-block' onClick={() => handleUpdate(_id)}>Update</button>
+            <div className='d-flex justify-content-center'>
+                <button className='btn btn-danger text-white my-2 mx-auto ' onClick={() => handleUpdate(_id)}>Update</button>
+            </div>
         </div>
     );
 };
