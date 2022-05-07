@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../hook/useProducts';
+import Loading from '../../shared/Loading/Loading';
 import Product from '../Home/Product/Product';
 
 const StockProducts = () => {
     const [products] = useProducts()
+    if (products.length === 0) {
+        return <Loading></Loading>
+    }
     return (
         <div className=''>
             <h2 className='text-center mt-4'>Total Stock Products :  {products.length}</h2>

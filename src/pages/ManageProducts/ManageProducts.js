@@ -2,10 +2,14 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useProducts from '../../hook/useProducts';
+import Loading from '../../shared/Loading/Loading';
 import Manage from '../Manage/Mange';
 
 const ManageProducts = () => {
     const [products] = useProducts()
+    if (products.length === 0) {
+        return <Loading></Loading>
+    }
     return (
 
         <div className='container mx-auto my-4'>

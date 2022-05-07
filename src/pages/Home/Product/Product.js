@@ -8,16 +8,21 @@ const Product = ({ product }) => {
         navigate(`/products/${id}`)
     }
     return (
-        <div className='col-xl-3 col-lg-3 text-center border py-4 rounded'>
-            <img src={img} alt="" />
-            <h5>{name}</h5>
-            <p>{description}</p>
-            <h5>In stock:{quantity} pics</h5>
-            <h5>Supplier :{supplier} </h5>
-            <h5>Sold info:{!sold ? 'Available' : 'Not available'} </h5>
-            <h4>Price:{price}/pics </h4>
-            <button className='btn btn-secondary' onClick={() => handleUpdate(_id)}>Update</button>
-        </div >
+        <div className='col-xl-3 col-lg-3 text-center border rounded '>
+            <div className='px-4 pt-4 '>
+                <div className='d-flex justify-content-center' >
+                    <img src={img} style={{ style: '300px' }} className='' alt="" />
+                </div>
+                <div>
+                    <h6>{name}</h6>
+                    <p title={description}>{description.slice(0, 40)}..</p>
+                    <h5>In stock:{quantity} pics</h5>
+                    <p className='fw-bold'>Supplier :{supplier} </p>
+                    <h6 className='my-0'>Price:{price}BDT </h6>
+                </div>
+            </div >
+            <button className='btn btn-secondary w-100 d-block' onClick={() => handleUpdate(_id)}>Update</button>
+        </div>
     );
 };
 
