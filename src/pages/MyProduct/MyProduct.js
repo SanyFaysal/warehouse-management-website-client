@@ -16,7 +16,7 @@ const MyProduct = ({ product, handleDelete }) => {
                 <div className=' my-auto col-xl-10 col-lg-8 col-md-8 '>
                     <h4>{name}</h4>
                     <p>{description}</p>
-                    <div className="d-flex">
+                    <div className="d-flex justify-content-center">
                         <h6 className=' text-secondary bg-warning px-3 py-2 shadow-lg rounded text-white'> Supplier : {supplier}</h6>
                         <h6 className='mx-3 text-secondary bg-info px-3 py-2 shadow-lg rounded text-white'>In stock: {quantity}</h6>
                         <h6 className=' text-secondary bg-success px-3 py-2 shadow-lg rounded text-white'>Price : {price}</h6>

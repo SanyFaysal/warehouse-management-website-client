@@ -55,29 +55,36 @@ const UpdateProduct = () => {
     }
 
     return (
-        <>
-            <div className="container mt-5 d-flex " style={{ height: '40vh', marginBottom: '18%' }}>
-                <div className=' w-100 d-flex justify-content-center pt-5'>
-                    <img className='mx-auto' src={product?.img} alt='' />
+        <div className='container  m-5 mx-auto '>
+            <h2 className='text-center' >Update Product</h2>
+            <div className='row d-flex justify-content-around bg-secondary bg-opacity-10 py-4 rounded'>
+                <div className='col-xl-5 col-lg-5 col-md-6 col-sm-12 col-sm-12 d-flex justify-content-center align-items-center'>
+                    <img src={product?.img} style={{ width: '300px' }} alt='' />
                 </div>
-                <div className='d-flex justify-content-center align-items-center'>
+                <div className='col-xl-7 col-lg-7 col-md-6 col-sm-12 col-sm-12 d-flex mb-5 justify-content-center align-items-center'>
                     <div>
                         <h4>{name}</h4>
-                        <p>{description}</p>
-                        <h3>In stock:{quantity} pics</h3>
-                        <h3>Supplier :{supplier} </h3>
-                        <h3>Price:{price}/pics </h3>
-                        <button onClick={handleDelivered} className='btn btn-warning  shadow me-2 mb-2'>Delivered</button>
-                        <form onSubmit={handleRestock} className="bg-warning  p-2 rounded my-3 w-50">
-                            <input type="number" name='quantity' required style={{ width: '75px' }} />
-                            <input type="submit" value="Restock" className='bg-success text-white border-0 shadow py-1' />
-                        </form>
+                        <p className='fs-5'>{description}</p>
+                        <h5>Supplier :{supplier} </h5>
+                        <h5 className='fw-bold'>Price : {price}BDT </h5>
+                        <h5 className='fw-bold'>In stock : <span className='text-muted bg-white rounded px-1'> {quantity} pics</span> </h5>
+                        <div className='d-flex align-items-center '>
+                            <div className='me-4'>
+                                <button onClick={handleDelivered} className='btn btn-danger shadow'>Delivered</button>
+                            </div>
+                            <div className=" px-2 py-1 shadow-lg rounded  bg-success bg-opacity-75 ">
+                                <form onSubmit={handleRestock} className=''>
+                                    <input type="number" name='quantity' required className='p-1 border-0 shadow-lg rounded px-2' style={{ width: "100px" }} />
+                                    <input type="submit" value="Restock" className='bg-success bg-opacity-75 shadow-lg  border-0 py-1 rounded text-white' />
+                                </form>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
+                <Link className='btn btn-primary mx-auto w-50' to='/manageProducts'>Manage All Products</Link>
+
             </div>
-            <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
-        </>
+        </div>
     )
 };
 

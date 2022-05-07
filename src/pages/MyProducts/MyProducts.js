@@ -42,12 +42,13 @@ const MyProducts = () => {
         <div>
 
             <div>
+                <h2 className='text-center mt-3'>Manage My Products</h2>
                 <div className='text-center'>
                     <h5>{user?.displayName}</h5>
                     <h6>Email: <span className='text-warning'>{user.email}</span></h6>
                 </div>
                 <div className='container mx-auto my-4'>
-                    <h2 className='text-center'>Manage My Products</h2>
+
                     {
                         myProducts.map(product => <MyProduct
                             key={product._id}
