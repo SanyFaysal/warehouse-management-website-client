@@ -7,7 +7,7 @@ const Banner = () => {
         <div className='h-50'>
             <Carousel>
 
-                <Carousel.Item as={Link} to="/home">
+                <Carousel.Item >
                     <img
                         style={{ width: '100%' }}
                         src='https://i.ibb.co/h7xpbgN/The-Electronics-Warehouse-10th-Year-Anniversary-1536x419.jpg'
@@ -17,14 +17,14 @@ const Banner = () => {
 
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item as={Link} to="/home">
+                <Carousel.Item>
                     <img
                         style={{ width: '100%' }}
                         src='https://i.ibb.co/1b7tJQV/samsung-televisions-at-lowest-prices-electronics-warehouse.jpg'
                         alt="First slide"
                     />
-                    <Carousel.Caption className=' d-flex justify-content-center align-items-center' >
-                        <h3 id='headline'>Featured Products for<br />
+                    <Carousel.Caption className=' d-flex justify-content-center align-items-center ' >
+                        <h3 className='headline'>Featured Products for<br />
                             World Continents</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
