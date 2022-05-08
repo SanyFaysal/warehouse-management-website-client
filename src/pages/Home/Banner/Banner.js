@@ -23,8 +23,9 @@ const Banner = () => {
                         src='https://i.ibb.co/1b7tJQV/samsung-televisions-at-lowest-prices-electronics-warehouse.jpg'
                         alt="First slide"
                     />
-                    <Carousel.Caption className=' d-flex justify-content-center align-items-center ' >
-
+                    <Carousel.Caption className=' d-flex justify-content-center align-items-center' >
+                        <h3 id='headline'>Featured Products for<br />
+                            World Continents</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
 

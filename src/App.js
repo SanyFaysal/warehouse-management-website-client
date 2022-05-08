@@ -14,6 +14,7 @@ import MyProducts from './pages/MyProducts/MyProducts';
 import NotFound from './shared/NotFound/NotFound';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Blog from './pages/Blog/Blog';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <MyProducts></MyProducts>
           </RequireAuth>
         }></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

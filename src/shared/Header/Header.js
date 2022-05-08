@@ -7,10 +7,11 @@ import { signOut } from 'firebase/auth';
 const Header = () => {
     const [user] = useAuthState(auth);
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" sticky='top' variant="dark">
             <Container>
                 <Navbar.Brand as={Link} to="/home">
-                    <img src="https://i.ibb.co/McLF8WG/attachment-70212351-removebg-preview.png" alt="" />
+                    <img src="https://i.ibb.co/G0BDBTS/images-removebg-preview.png" style={{ width: '80px' }} alt="" />
+                    Gadgets World
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -19,6 +20,7 @@ const Header = () => {
                         <Nav.Link as={Link} to="/stockProducts">Stock</Nav.Link>
                         <Nav.Link as={Link} to="/manageProducts">Manage-Products</Nav.Link>
                         <Nav.Link as={Link} to="/myProducts">My Products</Nav.Link>
+                        <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                         {!user ? <Nav.Link as={Link} to="/login">Login</Nav.Link> :
                             <span onClick={() => signOut(auth)} className='d-flex align-items-center justify-content-center text-white'>Logout</span>
                         }
