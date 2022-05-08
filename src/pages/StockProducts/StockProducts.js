@@ -19,7 +19,7 @@ const StockProducts = () => {
                         product={product}></Product>)
                 }
             </div>
-            <Link className='btn btn-primary mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
+            <Link className='btn btn-success text-white mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
         </div>
     );
 };

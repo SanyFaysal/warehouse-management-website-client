@@ -10,7 +10,7 @@ const MyProduct = ({ product, handleDelete }) => {
     return (
         <div className='d-flex row py-3 my-3 px-2 justify-content-between border rounded-3 bg-secondary bg-opacity-10 shadow-sm'>
             <div className='my-auto mx-auto d-flex justify-content-center col-xl-3 col-lg-3 col-md-12 col-sm-12 '>
-                <img src={img} style={{ width: '300px' }} alt="" />
+                <img src={img} style={{ width: '250px' }} alt="" />
             </div>
             <div className='my-auto row col-xl-8 col-lg-8 col-md-12 col-sm-12 d-flex justify-content-start'>
                 <div className=' my-auto col-xl-10 col-lg-8 col-md-8 '>

@@ -1,45 +1,64 @@
+
 import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../../shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
-
 const Login = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    const [signInWithEmailAndPassword, user, loading,] = useSignInWithEmailAndPassword(auth);
-
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(auth);
     const onSubmit = (data) => {
         const email = data.email;
         const password = data.password;
         signInWithEmailAndPassword(email, password)
-        data.reset()
+        reset()
     };
+    const handleResetPassword = async (data) => {
+        const email = data.email;
 
-    if (user) {
-        navigate(from, { replace: true })
-    }
-    if (loading) {
-        <Loading></Loading>
+        if (email == '') {
+            toast.error("Please Give your email")
+        }
+
+        else {
+            await sendPasswordResetEmail(email)
+
+        }
+        if (user) {
+            navigate(from, { replace: true })
+        }
+        if (loading || sending) {
+            <Loading></Loading>
+        }
     }
     return (
         <div className='row  my-5'>
+
             <div className=" shadow p-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto  bg-secondary bg-opacity-10">
                 <h1 className='text-center'>Please login </h1>
                 <form onSubmit={handleSubmit(onSubmit)} >
-                    <input className="w-100 p-2 border-0 shadow" {...register('email')} placeholder="your name" required /><br />
+                    <input className="w-100 p-2 border-0 rounded shadow" {...register('email')} placeholder="email" required /><br />
                     <input className="w-100 p-2 my-3 border-0 shadow"  {...register('password')} placeholder='enter password' required /><br />
-                    <input className='w-100 btn btn-primary' type="submit" />
+                    <input className='w-100 btn btn-primary' type="submit" value='Login' />
                 </form>
-                <Link to="/register" className='text-primary text-decoration-none'>Create an account</Link>
+                <div className='d-flex justify-content-between'>
+                    <Link to="/register" className='text-success text-decoration-none'>Create an account</Link>
+                    <span onClick={handleSubmit(handleResetPassword)} className='text-danger'>Reset Password</span>
+                </div>
+                {error ? <span className='text-danger text-center d-block'>{error?.message}</span> : ''}
+                {error2 ? <span className='text-danger text-center d-block'>{error?.message}</span> : ''}
                 <SocialLogin></SocialLogin>
             </div>
 
-        </div>
+        </div >
     );
 };
+
 export default Login;

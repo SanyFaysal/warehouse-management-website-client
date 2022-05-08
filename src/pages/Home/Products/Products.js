@@ -12,8 +12,6 @@ const Products = () => {
     }
     return (
         <div className=''>
-
-            <h1 className='text-center mt-4'>Products :  { }</h1>
             <div className='w-100 row gap-2 d-flex justify-content-center'>
                 {
                     demoProduct.map(product => <Product
@@ -21,7 +19,10 @@ const Products = () => {
                         product={product}></Product>)
                 }
             </div>
-            <Link className='btn bg-success bg-opacity-75 text-white mx-auto d-block w-25 my-5' to='/manageProducts'>Manage All Products</Link>
+            <div className='d-flex justify-content-center  my-5'>
+                <Link className='btn d-inline border-danger border-1 border text-danger fw-bold me-3' to='/stockProducts'>See All</Link>
+                <Link className='btn border-success border-1 text-success  fw-bold d-inline ' to='/manageProducts'>Manage All Products</Link>
+            </div>
         </div>
     );
 };

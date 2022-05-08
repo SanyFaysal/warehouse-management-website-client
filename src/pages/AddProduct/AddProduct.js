@@ -2,9 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth)
     const onSubmit = data => {
         data.email = user.email;
@@ -18,7 +19,8 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('Successfully added !!');
+                toast.success('Successfully added !!');
+                reset()
             })
     };;
     return (

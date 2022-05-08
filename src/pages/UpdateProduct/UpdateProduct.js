@@ -65,23 +65,25 @@ const UpdateProduct = () => {
                     <div>
                         <h4>{name}</h4>
                         <p className='fs-6 border-top border-bottom py-2'>{description}</p>
-                        <h5>Supplier :{supplier} </h5>
-                        <h5 className='fw-bold'>Price : {price}BDT </h5>
-                        <h5 className='fw-bold'>In stock : <span className='text-muted bg-white rounded px-1'> {quantity} pics</span> </h5>
+                        <h6 className='fw-bold'>Supplier : {supplier} </h6>
+                        <h6 className='fw-bold'>Price : {price} BDT </h6>
+                        <h5 className='fw-bold'>In stock : <span className='text-muted bg-white rounded px-2'> {quantity} pics</span> </h5>
                         <div className='d-flex align-items-center pt-3 '>
                             <div className='me-4'>
-                                <button onClick={handleDelivered} className='btn btn-danger shadow'>Delivered</button>
+                                <button onClick={handleDelivered} className='btn btn-danger shadow-lg'>Delivered</button>
                             </div>
-                            <div className=" px-2 py-1 shadow-lg rounded  bg-success bg-opacity-75 ">
+                            <div className=" px-2 py-1 shadow-lg rounded  bg-warning bg-opacity-75 ">
                                 <form onSubmit={handleRestock} className=''>
                                     <input type="number" name='quantity' required className='p-1 border-0 shadow-lg rounded px-2' style={{ width: "100px" }} />
-                                    <input type="submit" value="Restock" className='bg-success bg-opacity-75 shadow-lg  border-0 py-1 rounded text-white' />
+                                    <input type="submit" value="Restock" className='bg-warning shadow-lg  border-0 py-1 rounded text-white' />
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Link className='btn btn-primary mx-auto w-50' to='/manageProducts'>Manage All Products</Link>
+                <div className='d-flex justify-content-center border-top border-2 pt-3'>
+                    <Link className='btn btn-success bg-opacity-75 text-white' to='/manageProducts'>Manage All Products</Link>
+                </div>
 
             </div>
         </div>

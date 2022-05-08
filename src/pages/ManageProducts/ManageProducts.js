@@ -21,7 +21,8 @@ const ManageProducts = () => {
                         <th>Stock</th>
                         <th>Price</th>
                         <th>supplier</th>
-                        <th>Operate</th>
+                        <th>Update</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -11,11 +11,16 @@ import StockProducts from './pages/StockProducts/StockProducts';
 import AddProduct from './pages/AddProduct/AddProduct';
 import RequireAuth from './shared/RequireAuth/RequireAuth';
 import MyProducts from './pages/MyProducts/MyProducts';
+import NotFound from './shared/NotFound/NotFound';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <div>
       <Header></Header>
+      <ToastContainer></ToastContainer>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
@@ -38,8 +43,10 @@ function App() {
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+
     </div>
   );
 }

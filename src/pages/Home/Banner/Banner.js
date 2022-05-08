@@ -1,20 +1,20 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import image1 from '../../../images/pngtree-business-concept-of-online-shopping-e-commerce-png-image_2174632 (1).jpg'
+import './Banner.css'
 const Banner = () => {
     return (
-        <div>
-            <Carousel variant="dark" fade>
+        <div className=''>
+            <Carousel>
                 <Carousel.Item as={Link} to="/home">
                     <img
-                        style={{ width: '100%', height: '50vh' }}
-                        src={image1}
+                        style={{ width: '100%', filter: " blur(2px)" }}
+                        src='https://i.ibb.co/m93GghG/5258868.jpg'
                         alt="First slide"
                     />
-                    <Carousel.Caption className='text-bold bg-white'>
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <Carousel.Caption className=' d-flex justify-content-center align-items-center ' >
+                        <h3 id='headline'>Featured Products For<br /> World Continents</h3>
+
                     </Carousel.Caption>
                 </Carousel.Item>
 
