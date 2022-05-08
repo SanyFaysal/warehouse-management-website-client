@@ -11,7 +11,7 @@ const Manage = ({ product }) => {
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure to delete?');
         if (confirmation) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://murmuring-anchorage-22849.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })

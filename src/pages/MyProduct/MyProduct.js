@@ -1,8 +1,5 @@
-import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TrashIcon } from '@heroicons/react/solid';
-import React, { useState } from 'react';
-import useProducts from '../../hook/useProducts';
+import React from 'react';
 
 const MyProduct = ({ product, handleDelete }) => {
     const { name, quantity, price, description, supplier, _id, img } = product;
@@ -20,7 +17,6 @@ const MyProduct = ({ product, handleDelete }) => {
                         <h6 className=' text-secondary bg-warning px-3 py-2 shadow-lg rounded text-white'> Supplier : {supplier}</h6>
                         <h6 className='mx-3 text-secondary bg-info px-3 py-2 shadow-lg rounded text-white'>In stock: {quantity}</h6>
                         <h6 className=' text-secondary bg-success px-3 py-2 shadow-lg rounded text-white'>Price : {price}</h6>
-
                     </div>
                 </div>
 

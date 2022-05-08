@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -15,13 +14,15 @@ const SocialLogin = () => {
     if (loading) {
         return <Loading></Loading>
     }
+
     return (
         <div className='mt-4'>
             {error ? <span className='text-center d-block text-danger my-2'>{error.message}</span> : ''}
-            <button onClick={() => signInWithGoogle()} className='w-100 rounded-pill  border-0   bg-info bg-opacity- py-1'>
+            <button onClick={() => signInWithGoogle()} className='w-100 rounded-pill border border-1   border-success  py-1 shadow-lg'>
                 <img src='https://i.ibb.co/0rLzqn3/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png' className='ms' style={{ width: '30px' }} alt="" />
-                <span className='text-white'> Google Login</span>
+                <span className='text-success'> Google Login</span>
             </button>
+
         </div>
     );
 };

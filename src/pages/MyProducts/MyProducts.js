@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import Loading from '../../shared/Loading/Loading';
-import Manage from '../Manage/Mange';
 import MyProduct from '../MyProduct/MyProduct';
-// import useProducts from '../../hook/useProducts';
-// import Loading from '../../shared/Loading/Loading';
-// import Manage from '../Manage/Mange';
 const MyProducts = () => {
     const [user] = useAuthState(auth)
     const [myProducts, setMyProducts] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myProducts?email=${user.email}`)
+        fetch(`https://murmuring-anchorage-22849.herokuapp.com/myProducts?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyProducts(data)
@@ -21,7 +15,7 @@ const MyProducts = () => {
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure to delete?');
         if (confirmation) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://murmuring-anchorage-22849.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })

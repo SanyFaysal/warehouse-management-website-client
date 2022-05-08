@@ -7,7 +7,7 @@ import Loading from '../../../shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const navigate = useNavigate()
     const onSubmit = (data) => {
@@ -29,7 +29,7 @@ const Register = () => {
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <input className="w-100 p-2 border-0 shadow rounded" {...register('email')} placeholder="Email" required /><br />
                     <input className="w-100 my-3 p-2 border-0 shadow rounded" {...register('password')} placeholder='enter password' required /><br />
-                    <input className='w-100 btn btn-primary border-0' type="Register" />
+                    <input className='w-100 btn btn-primary border-0' type="submit" value='Register' />
                 </form>
                 <Link to="/login" className='text-primary text-decoration-none'>Already have an account?</Link>
                 {error ? <span className='text-danger d-block text-center'>{error.message}</span> : ''}

@@ -8,7 +8,7 @@ const UpdateProduct = () => {
     const { quantity, ...rest } = product;
     console.log(product)
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://murmuring-anchorage-22849.herokuapp.com/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -21,7 +21,7 @@ const UpdateProduct = () => {
         event.preventDefault();
         const quant = parseInt(event.target.quantity.value)
         const electronicInfo = { quantity: parseInt(product.quantity) + quant, ...rest }
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://murmuring-anchorage-22849.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -39,7 +39,7 @@ const UpdateProduct = () => {
     const handleDelivered = (event) => {
         event.preventDefault();
         const electronicInfo = { quantity: parseInt(product.quantity) - 1, ...rest }
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://murmuring-anchorage-22849.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

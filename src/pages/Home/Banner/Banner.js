@@ -4,19 +4,30 @@ import { Link } from 'react-router-dom';
 import './Banner.css'
 const Banner = () => {
     return (
-        <div className=''>
+        <div className='h-50'>
             <Carousel>
+
                 <Carousel.Item as={Link} to="/home">
                     <img
-                        style={{ width: '100%', filter: " blur(2px)" }}
-                        src='https://i.ibb.co/m93GghG/5258868.jpg'
+                        style={{ width: '100%' }}
+                        src='https://i.ibb.co/h7xpbgN/The-Electronics-Warehouse-10th-Year-Anniversary-1536x419.jpg'
                         alt="First slide"
                     />
                     <Carousel.Caption className=' d-flex justify-content-center align-items-center ' >
-                        <h3 id='headline'>Featured Products For<br /> World Continents</h3>
 
                     </Carousel.Caption>
                 </Carousel.Item>
+                <Carousel.Item as={Link} to="/home">
+                    <img
+                        style={{ width: '100%' }}
+                        src='https://i.ibb.co/1b7tJQV/samsung-televisions-at-lowest-prices-electronics-warehouse.jpg'
+                        alt="First slide"
+                    />
+                    <Carousel.Caption className=' d-flex justify-content-center align-items-center ' >
+
+                    </Carousel.Caption>
+                </Carousel.Item>
+
 
             </Carousel>
         </div>

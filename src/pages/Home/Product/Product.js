@@ -8,7 +8,7 @@ const Product = ({ product }) => {
         navigate(`/products/${id}`)
     }
     return (
-        <div className='col-xl-3 col-lg-3 text- border rounded '>
+        <div className='col-xl-3 col-lg-3 text- border rounded ' >
             <div className='p-2 text-center'>
                 <div className='d-flex justify-content-center' >
                     <img src={img} style={{ width: '250px' }} className='' alt="" />

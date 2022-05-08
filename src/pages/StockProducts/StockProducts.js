@@ -11,7 +11,7 @@ const StockProducts = () => {
     }
     return (
         <div className=''>
-            <h2 className='text-center mt-4'>Total Stock Products :  {products.length}</h2>
+            <h4 className='text-center my-4'>Total Stock Products :  {products.length}</h4>
             <div className='w-100 row gap-3 d-flex justify-content-center'>
                 {
                     products.map(product => <Product

@@ -9,7 +9,7 @@ const AddProduct = () => {
     const [user] = useAuthState(auth)
     const onSubmit = data => {
         data.email = user.email;
-        const url = 'http://localhost:5000/products';
+        const url = 'https://murmuring-anchorage-22849.herokuapp.com/products';
         fetch(url, {
             method: 'POST',
             headers: {

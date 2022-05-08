@@ -1,11 +1,31 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project :  [Gadgets World](https://warehouse-management-a6f08.web.app/)
 
-## Available Scripts
+## About : 
 
-In the project directory, you can run:
+Gadgets World is a store house of electric products. Here Television, Mobile, Laptop, Fan, Electric Watch, and so many . Any product here and also calculate his delivery products .Also can add a number of products and delete this with the base of user email . Some protected route like AddProducts , MyProducts, ManageProducts. 
 
+## In this projects : 
+* Home component about the short view of products 
+* Update Component to restore and delivered any products
+* Stock component to show all the products 
+* Manage component to delete any Product 
+* Login and Logout system implemented in Login Component and register component to register an account 
+* Add component to add A Product with a number of quantity
+*  My Product Component  to show products added bye the users who is
+
+## Tecnology uses :
+* React js
+* React Bootstrap
+* React Router
+* Firebase
+* React Firebase hook 
+* React Hook Form
+* React toastify
+* Mongodb
+* Express js
+
+ logged in  
 ### `npm start`
 
 Runs the app in the development mode.\
